@@ -21,21 +21,21 @@ import javax.ws.rs.core.MediaType
 @Path("api/result")
 class SearchController {
 
-    private Repository<DataCatalog> service = new PingingDatastoreRepository<>(DataCatalog)
+    private Repository<DataCatalog> repo = new PingingDatastoreRepository<>(DataCatalog)
 
     @ApiOperation(value = "Search for a DataCatalog **Secure")
     @POST
     @Secure(value = Roles.SYSTEM, allowInternal = true)
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    DataCatalog create(Search search){
+    DataCatalog search(Search search){
         try{
             long value = Long.parseLong(search.query)
-            return service.list().find{it.datasetId == value.toString()}
+            return repo.list().find{it.datasetId == value.toString()}
 
         }
         catch(Exception ignored){}
 
-        return service.list().find{it.datasetName == search.query}
+        return repo.list().find{it.datasetName.toLowerCase() == search.query.toLowerCase()}
     }
 }
