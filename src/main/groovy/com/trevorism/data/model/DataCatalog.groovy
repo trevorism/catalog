@@ -1,4 +1,4 @@
-package com.trevorism.gcloud.webapi.model
+package com.trevorism.data.model
 
 import groovy.transform.ToString
 

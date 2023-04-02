@@ -1,16 +1,14 @@
 package com.trevorism.gcloud
 
 import com.google.gson.Gson
-import com.trevorism.gcloud.webapi.model.DataCatalog
+import com.trevorism.data.model.DataCatalog
 import com.trevorism.https.DefaultSecureHttpClient
 import com.trevorism.https.SecureHttpClient
 
-/**
- * @author tbrooks
- */
 
-this.metaClass.mixin(cucumber.api.groovy.Hooks)
-this.metaClass.mixin(cucumber.api.groovy.EN)
+
+this.metaClass.mixin(io.cucumber.groovy.Hooks)
+this.metaClass.mixin(io.cucumber.groovy.EN)
 
 SecureHttpClient client = new DefaultSecureHttpClient()
 String json

@@ -1,15 +1,15 @@
-package com.trevorism.gcloud.webapi.controller
+package com.trevorism.data.controller
 
 import com.trevorism.data.Repository
-import com.trevorism.gcloud.webapi.model.DataCatalog
-import org.junit.Test
+import com.trevorism.data.model.DataCatalog
+import org.junit.jupiter.api.Test
 
 class CatalogControllerTest {
 
     @Test
-    void testCreate(){
+    void testCreate() {
         CatalogController controller = new CatalogController()
-        controller.service = [create: {new DataCatalog(id: "1")}] as Repository
+        controller.service = [create: { new DataCatalog(id: "1") }] as Repository
 
         DataCatalog dc = new DataCatalog()
         assert "1" == controller.create(dc).id
@@ -17,18 +17,18 @@ class CatalogControllerTest {
     }
 
     @Test
-    void testRead(){
+    void testRead() {
         CatalogController controller = new CatalogController()
-        controller.service = [get: {new DataCatalog(id: "1")}] as Repository
+        controller.service = [get: { new DataCatalog(id: "1") }] as Repository
 
         assert "1" == controller.read("414124212").id
 
     }
 
     @Test
-    void testReadAll(){
+    void testReadAll() {
         CatalogController controller = new CatalogController()
-        controller.service = [list: {[new DataCatalog(id: "1")]}] as Repository
+        controller.service = [list: { [new DataCatalog(id: "1")] }] as Repository
 
         assert controller.readAll()
     }
@@ -36,7 +36,7 @@ class CatalogControllerTest {
     @Test
     void testUpdate() {
         CatalogController controller = new CatalogController()
-        controller.service = [update: { id, list -> list}] as Repository
+        controller.service = [update: { id, list -> list }] as Repository
 
         assert controller.update("5202267682", new DataCatalog(id: "1"))
     }
@@ -44,7 +44,7 @@ class CatalogControllerTest {
     @Test
     void testDelete() {
         CatalogController controller = new CatalogController()
-        controller.service = [delete: { new DataCatalog(id: "1")}] as Repository
+        controller.service = [delete: { new DataCatalog(id: "1") }] as Repository
         assert controller.delete("5202267682")
     }
 }
