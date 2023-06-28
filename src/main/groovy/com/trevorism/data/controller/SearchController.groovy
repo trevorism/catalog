@@ -20,7 +20,7 @@ class SearchController {
     @Operation(summary = "Search for a DataCatalog **Secure")
     @Post(value = "/", produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
     @Secure(value = Roles.SYSTEM, allowInternal = true)
-    DataCatalog search(Search search){
+    DataCatalog search(@Body Search search){
         try{
             long value = Long.parseLong(search.query)
             return repo.list().find{it.datasetId == value.toString()}

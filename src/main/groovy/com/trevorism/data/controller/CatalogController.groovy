@@ -32,7 +32,7 @@ class CatalogController {
     @Operation(summary = "Get all data catalogs **Secure")
     @Secure(value = Roles.SYSTEM, allowInternal = true)
     @Get(value = "/", produces = MediaType.APPLICATION_JSON)
-    List<com.trevorism.data.model.DataCatalog> readAll() {
+    List<DataCatalog> readAll() {
         service.list()
     }
 
@@ -61,7 +61,6 @@ class CatalogController {
     @Operation(summary = "Delete a data catalog with id {id} **Secure")
     @Delete(value = "/{id}", produces = MediaType.APPLICATION_JSON)
     @Secure(value = Roles.SYSTEM, allowInternal = true)
-
     DataCatalog delete(String id) {
         service.delete(id)
     }
