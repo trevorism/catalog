@@ -21,9 +21,9 @@ When(/the search for id or name {string} is requested/) { String string ->
 
 Then(/the app dataset is returned/) {  ->
     DataCatalog catalog = gson.fromJson(json, DataCatalog)
-    assert catalog.id == "6194655276302336"
-    assert catalog.datasetId == "2"
+    assert catalog.id == "4832937463775232"
+    assert catalog.datasetId == "1"
     assert catalog.datasetName == "app"
-    assert catalog.url == "https://datastore.trevorism.com/api/app"
+    assert catalog.url == "https://datastore.data.trevorism.com/object/app"
 
 }
