@@ -15,5 +15,5 @@ When(/the endpoint tester internal endpoint is invoked/) { ->
 }
 
 Then(/a response is returned successfully/) { ->
-    assert response == "secure hello json"
+    assert response == '{"secure": "hello json"}'
 }
