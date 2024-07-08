@@ -1,13 +1,13 @@
 package com.trevorism.gcloud
 
-import com.trevorism.https.DefaultSecureHttpClient
+import com.trevorism.https.AppClientSecureHttpClient
 import com.trevorism.https.SecureHttpClient
 
 
 this.metaClass.mixin(io.cucumber.groovy.Hooks)
 this.metaClass.mixin(io.cucumber.groovy.EN)
 
-SecureHttpClient client = new DefaultSecureHttpClient()
+SecureHttpClient client = new AppClientSecureHttpClient()
 def response = ""
 
 When(/the endpoint tester internal endpoint is invoked/) { ->
