@@ -6,6 +6,4 @@
 
 Creates a way to find datasets on Trevorism.
 
-Current version: 0.4.0
-
 Deployed to https://catalog.data.trevorism.com
