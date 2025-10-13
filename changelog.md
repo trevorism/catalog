@@ -1,3 +1,7 @@
+## 0.6.0
+
+Update dependencies, move to java 21
+
 ## 0.5.0
 
 Update dependencies.

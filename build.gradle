@@ -16,15 +16,15 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.8.0'
-        classpath 'com.trevorism:gradle-acceptance-plugin:2.7.2'
+        classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.8.3'
+        classpath 'com.trevorism:gradle-acceptance-plugin:2.8.2'
     }
 }
 
 plugins {
     id "groovy"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("io.micronaut.application") version "4.3.8"
+    id("com.gradleup.shadow") version "8.3.8"
+    id("io.micronaut.application") version "4.5.4"
     id "jacoco"
 }
 
@@ -48,7 +48,7 @@ dependencies {
     runtimeOnly("org.yaml:snakeyaml")
 
     implementation("jakarta.annotation:jakarta.annotation-api")
-    implementation 'io.projectreactor:reactor-core:3.6.8'
+    implementation 'io.projectreactor:reactor-core:3.7.11'
 
     implementation("io.swagger.core.v3:swagger-annotations")
     compileOnly("io.micronaut.openapi:micronaut-openapi"){
@@ -57,7 +57,7 @@ dependencies {
 
     runtimeOnly("ch.qos.logback:logback-classic")
 
-    implementation 'com.trevorism:micronaut-utility-beans:1.6.0'
+    implementation 'com.trevorism:micronaut-utility-beans:1.7.2'
     implementation 'com.trevorism:datastore-client:4.1.0'
 
     testImplementation 'com.trevorism:test-result-events:0.3.0'
@@ -65,7 +65,7 @@ dependencies {
     acceptanceImplementation 'io.cucumber:cucumber-groovy:6.10.4'
     acceptanceImplementation 'com.trevorism:secure-http-utils:3.2.0'
     acceptanceImplementation 'com.google.code.gson:gson:2.11.0'
-    acceptanceImplementation "ch.qos.logback:logback-classic:1.5.6"
+    acceptanceImplementation "ch.qos.logback:logback-classic:1.5.19"
 }
 
 application {
@@ -91,7 +91,7 @@ appengine {
     stage.artifact = layout.buildDirectory.file("libs/${project.name}-all.jar")
     deploy {
         projectId = "trevorism-data"
-        version = "0-5-0"
+        version = "0-6-0"
         stopPreviousVersion = true
         promote = true
     }

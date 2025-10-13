@@ -13,7 +13,6 @@ String json
 Gson gson = new Gson()
 
 When(/the search for id or name {string} is requested/) { String string ->
-    // Write code here that turns the phrase above into concrete actions
     json = client.post("https://catalog.data.trevorism.com/api/result", "{\"query\":\"${string}\"}")
 }
 
