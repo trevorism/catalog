@@ -1,4 +1,4 @@
-runtime: java21
+runtime: java25
 service: catalog
 entrypoint: java -jar catalog-all.jar
 handlers:
