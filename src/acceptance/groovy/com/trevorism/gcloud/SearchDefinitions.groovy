@@ -11,9 +11,10 @@ this.metaClass.mixin(io.cucumber.groovy.EN)
 SecureHttpClient client = new AppClientSecureHttpClient()
 String json
 Gson gson = new Gson()
+String baseUrl = System.getenv("ACCEPTANCE_BASE_URL") ?: "https://catalog.data.trevorism.com"
 
 When(/the search for id or name {string} is requested/) { String string ->
-    json = client.post("https://catalog.data.trevorism.com/api/result", "{\"query\":\"${string}\"}")
+    json = client.post("${baseUrl}/api/result", "{\"query\":\"${string}\"}")
 }
 
 Then(/the app dataset is returned/) {  ->
