@@ -1,3 +1,7 @@
+## 0.8.0
+
+Update dependencies and add the versioning plugin.
+
 ## 0.7.0
 
 Upgrade to micronaut 5, java 25
