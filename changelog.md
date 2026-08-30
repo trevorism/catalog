@@ -1,3 +1,7 @@
+## 1.0.0
+
+Update to match trevorism data interface.
+
 ## 0.8.0
 
 Update dependencies and add the versioning plugin.

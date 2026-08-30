@@ -6,9 +6,10 @@ import groovy.transform.ToString
 class DataCatalog {
 
     String id
-    String datasetId
+    long datasetId
     String datasetName
-    String url
+    String datastore
+    String lookup
     Map metadata
 
 }
