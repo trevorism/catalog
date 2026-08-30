@@ -7,5 +7,5 @@ Feature: Searching for datasets in the data catalog
 
   Scenario: Search by name
     Given the catalog application is alive
-    When the search for id or name "app" is requested
+    When the search for id or name "answe" is requested
     Then the app dataset is returned

@@ -14,14 +14,14 @@ Gson gson = new Gson()
 String baseUrl = System.getenv("ACCEPTANCE_BASE_URL") ?: "https://catalog.data.trevorism.com"
 
 When(/the search for id or name {string} is requested/) { String string ->
-    json = client.post("${baseUrl}/api/result", "{\"query\":\"${string}\"}")
+    json = client.post("${baseUrl}/search", "{\"query\":\"${string}\"}")
 }
 
 Then(/the app dataset is returned/) {  ->
-    DataCatalog catalog = gson.fromJson(json, DataCatalog)
-    assert catalog.id == "4832937463775232"
-    assert catalog.datasetId == "1"
-    assert catalog.datasetName == "app"
-    assert catalog.url == "https://datastore.data.trevorism.com/object/app"
+    List<DataCatalog> catalogList = gson.fromJson(json, List)
+    DataCatalog catalog = catalogList[0]
+    assert catalog.datasetId == 1
+    assert catalog.datasetName == "answer"
+    assert catalog.lookup == "datastore:answer"
 
 }
