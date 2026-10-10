@@ -1,3 +1,7 @@
+## 1.0.1
+
+Update dependencies and convert to github actions non close pull request trigger.
+
 ## 1.0.0
 
 Update to match trevorism data interface.
